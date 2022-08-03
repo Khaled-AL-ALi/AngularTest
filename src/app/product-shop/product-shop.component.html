@@ -1,0 +1,25 @@
+<div [hidden]="submitted" style="text-align: center;background-color: white;">
+    <p>this item added to the cart </p>
+</div>
+<div class="container">
+    <div class="card">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+                    <div class="tab-pane active" id="pic-1"><img src={{product.imgaddress}} /></div>
+                </div>
+                <div class="details col-md-6">
+                    <h3 class="product-title">{{product.name}}</h3>
+                    <p class="product-description">{{product.description}}</p>
+                    <h4 class="price">current price: <span>{{product.price | currency}}</span></h4>
+                    <div class="action">
+                        <button (click)="addToCart()" [class.disabled]="disableButton"
+                            class="add-to-cart btn btn-default" type="button">{{text}}</button>
+                        <button routerLink="/product" class="add-to-cart btn btn-default" type="button">continue
+                            shopping</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

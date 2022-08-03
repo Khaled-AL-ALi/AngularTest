@@ -1,0 +1,40 @@
+<ng-container *ngIf="submitted then template1 else template2"></ng-container>
+<ng-template #template1>
+    <form #contactInfo="ngForm" (ngSubmit)="submit(contactInfo.value)">
+        <div class="form-group">
+            <label for="exampleInputPassword1">firstname</label>
+            <input type="text" class="form-control" ngModel name="firstname" id="firstname" placeholder="firstname">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">lastname</label>
+            <input type="text" class="form-control" ngModel name="lastname" id="lastname" placeholder="lastname">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" [(ngModel)]="msg" name="Email" id="Email"
+                aria-describedby="emailHelp" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" ngModel name="Password" id="Password" placeholder="Password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <p>hello {{msg}}</p>
+    </form>
+</ng-template>
+
+<ng-template #template2>
+    <div class="jumbotron text-center">
+        <h1 class="display-3">Thank You {{contactInfo.firstname}}!</h1>
+        <p class="lead"><strong>Please check your email {{contactInfo.Email}}</strong> for further instructions on how
+            to complete your
+            account
+            setup.</p>
+        <hr>
+
+        <p class="lead">
+            <a class="btn btn-primary btn-sm" routerLink="/" role="button">Continue to homepage</a>
+        </p>
+    </div>
+</ng-template>
