@@ -1,4 +1,4 @@
-<p *ngIf="product.price>700">course is available on discount </p>
+<p *ngIf="product.price>700">course is available on discount</p>
 <ng-container *ngIf="product.quantity>0 then template1 else template2"></ng-container>
 
 <ng-template #template1>
@@ -6,5 +6,5 @@
 </ng-template>
 
 <ng-template #template2>
-    <p>this course is not available </p>
+    <p>this course is not available</p>
 </ng-template>

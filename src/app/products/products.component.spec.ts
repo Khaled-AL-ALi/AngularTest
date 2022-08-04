@@ -8,9 +8,9 @@ describe('ProductsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductsComponent ]
+      declarations: [ProductsComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ProductsComponent);
     component = fixture.componentInstance;
@@ -19,5 +19,19 @@ describe('ProductsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(component.isunchnge).toBe(true);
+    component.enableBuying();
+    expect(component.isunchnge).toBe(false);
+
   });
+
+  it('verifing title of the component', () => {
+    const element: HTMLElement = fixture.nativeElement;
+    const header = element.querySelector("h1");
+    expect(header?.textContent).toBe("Product List")
+
+  });
+
+  
+
 });
